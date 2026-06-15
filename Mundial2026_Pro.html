@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mundial 2026 Dashboard</title>
+<style>
+body{font-family:Arial,sans-serif;background:#0b172a;color:white;margin:0;padding:20px}
+.card{background:#13233f;padding:15px;border-radius:12px;margin-bottom:15px}
+h1,h2{margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:15px}
+table{width:100%;border-collapse:collapse}
+th,td{padding:8px;border-bottom:1px solid #2b426b}
+.small{font-size:12px;color:#ccc}
+</style>
+</head>
+<body>
+<h1>🏆 Mundial 2026 Dashboard</h1>
+<p class="small">Actualización automática cada 60 segundos</p>
+
+<div class="grid">
+<div class="card">
+<h2>⚽ Resultados</h2>
+<div id="matches">Conecte una API de fútbol...</div>
+</div>
+
+<div class="card">
+<h2>📈 Clasificación</h2>
+<div id="standings">Esperando datos...</div>
+</div>
+
+<div class="card">
+<h2>🔥 Cruces Proyectados</h2>
+<div id="bracket">
+Argentina vs Uruguay<br>
+Brasil vs Japón<br>
+España vs Austria
+</div>
+</div>
+</div>
+
+<script>
+async function loadData(){
+  document.getElementById("matches").innerHTML =
+    "Aquí aparecerán los partidos en vivo";
+  document.getElementById("standings").innerHTML =
+    "Aquí aparecerán las tablas de posiciones";
+}
+loadData();
+setInterval(loadData,60000);
+</script>
+</body>
+</html>
